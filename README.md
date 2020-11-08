@@ -16,3 +16,7 @@ Python 3.9.0 をインストール
 ```sh
 pyenv install 3.9.0
 ```
+
+```sh
+pip install -r requirements.txt
+```
