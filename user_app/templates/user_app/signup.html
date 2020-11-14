@@ -1,0 +1,7 @@
+<h1>Please Sign Up to My App.</h1>
+<form action="{% url 'user_app:signup' %}" method="post">
+{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" value="Sign Up">
+</form>
+<p>or <a href= "{% url 'user_app:login' %}">Login</a></p>
