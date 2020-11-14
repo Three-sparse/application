@@ -10,7 +10,9 @@ docs/locale/
 node_modules/
 tests/coverage_html/
 tests/.coverage
-build/
+build/*
 tests/report/
 .vscode
 db.sqlite3
+
+!pdfjs/*
