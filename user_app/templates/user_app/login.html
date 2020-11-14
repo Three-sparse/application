@@ -14,7 +14,7 @@
     <h1>Login</h1>
     <form action="{% url 'user_app:login' %}" method="post">
       {% csrf_token %}
-      {{ form.as_p }}
+      {{ form.as_ul }}
       <input type="submit" value="Login">
     </form>
     <!-- Optional JavaScript; choose one of the two! -->

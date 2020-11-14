@@ -19,10 +19,5 @@ def index(request):
   context = {'user':user}
   return render(request, 'user_app/index.html',context)
 
-def logged_in(request):
-  if request.user:
-    return True
-  else:
-    return False
   
   
