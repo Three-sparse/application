@@ -1,2 +1,50 @@
-<p>Hello!</p>
-<iframe width="800" height="600" src="/static/pdfjs/web/viewer.html?file=/static/sample.pdf">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/viewer.css">
+</head>
+
+<body>
+    <p>Hello!</p>
+    <main>
+        <iframe id="doc-viewer" src="/static/pdfjs/web/viewer.html?file=/static/sample.pdf"></iframe>
+        <div id="comment-area">
+            <div id="comments">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            {{ comment_user }}
+                        </h5>
+                        <h6 class="card-subtitle mb-2 text-muted page-number">
+                            {{ comment_page }}
+                        </h6>
+                        <p class="card-text">
+                            {{ comment_text }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <form id="comment-form" action="{% url 'doc_viewer:viewer' document_id %}" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="page">ページ数</label>
+                    <input type="number" name="page" id="comment-page" value="1" min="1" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="text">コメント</label>
+                    <textarea name="text" id="comment-text" class="form-control"></textarea>
+                </div>
+                <input type="submit" class="btn btn-primary">
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>
