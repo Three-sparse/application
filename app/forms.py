@@ -58,3 +58,6 @@ class MultipleUploadForm(forms.Form):
             file_path = default_storage.url(file_name)
             url_list.append(file_path)
         return url_list
+
+
+
