@@ -37,7 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'user_app'
 ]
+# ユーザーモデルのオーバーライド
+# AUTH_USER_MODEL = 'user_app.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
