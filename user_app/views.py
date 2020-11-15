@@ -8,7 +8,7 @@ def signup(request):
         form = SignUpForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('/')
+            return redirect('/login')
     else:
         form = SignUpForm()
     context = {'form':form}
