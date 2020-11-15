@@ -20,4 +20,5 @@ urlpatterns = [
     path('multi/upload/model/', views.multi_upload_with_model, name='multi_upload_with_model'),
 
     # input multiple
-    path('input/multiple/upload/', views.InputMultiUploadView.as_view(), name='input_multi'),]
+    path('input/multiple/upload/', views.InputMultiUploadView.as_view(), name='input_multi'),
+    ]
