@@ -13,7 +13,6 @@ class Tag(models.Model):
 class UploadFile(models.Model):
     """アップロードされたファイルを表すモデル"""
     file = models.FileField('ファイル')
-    tag = models.ForeignKey(Tag, on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
         """ファイルのURLを返す"""
