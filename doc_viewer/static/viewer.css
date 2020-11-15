@@ -1,0 +1,20 @@
+main {
+    display: flex;
+}
+
+#doc-viewer {
+    height: 800px;
+    width: 80%;
+}
+
+#comment-area {
+    width: 20%;
+}
+
+#comment-form > .input-group {
+    width: 100%;
+}
+
+.page-number {
+    display: flex;
+}
