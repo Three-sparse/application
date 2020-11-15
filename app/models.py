@@ -3,7 +3,7 @@ from django.db import models
 
 class Tag(models.Model):
     """ファイルのタグ"""
-    text = models.TextField('テキスト')
+    text = models.TextField('テキスト', unique=True)
 
     def __str__(self):
         """タグのテキストを返す"""
@@ -13,7 +13,7 @@ class Tag(models.Model):
 class UploadFile(models.Model):
     """アップロードされたファイルを表すモデル"""
     file = models.FileField('ファイル')
-    tag = models.ForeignKey(Tag, on_delete=models.CASCADE, null=True)
+    tag = models.ForeignKey(Tag, on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
         """ファイルのURLを返す"""
